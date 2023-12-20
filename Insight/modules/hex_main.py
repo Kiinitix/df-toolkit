@@ -5,8 +5,7 @@ import difflib
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTextEdit, QVBoxLayout, QFileDialog, \
                             QAction, QWidget, QLabel, QSplitter, QTextBrowser, QLineEdit, QPushButton, QInputDialog, \
                             QStatusBar
-from PyQt5.QtGui import QTextCursor, QTextDocument, QTextCharFormat, QColor
-from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QTextCursor
 
 
 class HexViewer(QMainWindow):

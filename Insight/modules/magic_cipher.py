@@ -1,12 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QLabel, QTextEdit, QPushButton, QFileDialog, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QLabel, QTextEdit, QPushButton, QWidget
 from Crypto.Cipher import AES
-from Crypto.Util.Padding import unpad
-from Crypto.Util.strxor import strxor
-from Crypto.Random import get_random_bytes
-from Crypto.Util.Padding import pad
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import unpad
 
 
 class MagicCipherDecryptionTool(QMainWindow):

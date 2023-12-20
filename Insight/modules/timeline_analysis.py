@@ -14,25 +14,20 @@ class TimelineAnalyzerApp(QMainWindow):
         self.setWindowTitle('Timeline Analyzer')
         self.setGeometry(100, 100, 800, 600)
 
-        # Create the main widget and set it as the central widget
         main_widget = QWidget(self)
         self.setCentralWidget(main_widget)
 
-        # Create layout
         layout = QVBoxLayout(main_widget)
 
-        # Create widgets
         label = QLabel('Timeline Analyzer', self)
         label.setAlignment(Qt.AlignCenter)
         label.setFont(QFont("Arial", 18, QFont.Bold))
         layout.addWidget(label)
 
-        # Button to load timeline data
         load_button = QPushButton('Load Timeline Data', self)
         load_button.clicked.connect(self.load_timeline_data)
         layout.addWidget(load_button)
 
-        # Placeholder for timeline visualization widget
         self.figure, self.ax = plt.subplots()
         self.canvas = FigureCanvas(self.figure)
         layout.addWidget(self.canvas)
@@ -40,7 +35,6 @@ class TimelineAnalyzerApp(QMainWindow):
         self.timeline_data = None
 
     def load_timeline_data(self):
-        # Open file dialog to load timeline data
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
         file_name, _ = QFileDialog.getOpenFileName(self, 'Open Timeline Data File', '', 'All Files (*);;Text Files (*.txt)', options=options)
@@ -51,8 +45,6 @@ class TimelineAnalyzerApp(QMainWindow):
             self.plot_timeline()
 
     def parse_timeline_data(self, file_name):
-    # Placeholder: Implement logic to parse timeline data from the file
-    # For demonstration, assuming a simple format with timestamp and event separated by comma
         timeline_data = []
 
         try:
