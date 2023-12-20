@@ -92,11 +92,25 @@ class Dashboard(QWidget):
         # Download Tab
         download_tab = QWidget()
         download_layout = QVBoxLayout()
-        for i in range(3):
-            button = QPushButton(f'Download Button {i+1}')
-            button.setObjectName("downloadButton")
-            button.clicked.connect(lambda _, button_id=i+1: self.download_button_clicked(button_id))
-            download_layout.addWidget(button)
+
+        conf = QPushButton('Configure AWS CLI')
+        conf.setObjectName("downloadButton")
+        conf.setFont(QFont("Arial", 14, QFont.Bold))
+        conf.clicked.connect(lambda _, button_id=11: self.download_button_clicked(button_id))
+        download_layout.addWidget(conf)
+
+        download = QPushButton('Download')
+        download.setObjectName("downloadButton")
+        download.setFont(QFont("Arial", 14, QFont.Bold))
+        download.clicked.connect(lambda _, button_id=12: self.download_button_clicked(button_id))
+        download_layout.addWidget(download)
+
+        upload = QPushButton('Upload')
+        upload.setObjectName("downloadButton")
+        upload.setFont(QFont("Arial", 14, QFont.Bold))
+        upload.clicked.connect(lambda _, button_id=13: self.download_button_clicked(button_id))
+        download_layout.addWidget(upload)
+
         download_tab.setLayout(download_layout)
         dashboard_content.addWidget(download_tab)
 
@@ -161,10 +175,20 @@ class Dashboard(QWidget):
             subprocess.Popen(["python", "file_explorer.py"])
         if(button_id == 4):
             subprocess.Popen(["python", "magic_cipher.py"])
+        if(button_id == 5):
+            subprocess.Popen(["python", "disk_analyzer.py"])
+        if(button_id == 6):
+            subprocess.Popen(["python", "memory_forensics.py"])
+        if(button_id == 4):
+            subprocess.Popen(["python", "timeline_analysis.py"])
 
     def download_button_clicked(self, button_id):
-        print(f'Download Button {button_id} clicked')
-        # Add functionality for Download buttons
+        if(button_id == 11):
+            subprocess.Popen(["python", "aws/conf.py"])
+        if(button_id == 12):
+            subprocess.Popen(["python", "aws/download.py"])
+        if(button_id == 13):
+            subprocess.Popen(["python", "aws/upload.py"])
 
     def get_random_sentences(self):
         sentences = [
