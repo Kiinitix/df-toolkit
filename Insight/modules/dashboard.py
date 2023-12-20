@@ -61,7 +61,7 @@ class Dashboard(QWidget):
         home_layout.addWidget(button3)
 
 # Button 4
-        button4 = QPushButton('Button 4')
+        button4 = QPushButton('Magic Cipher')
         button4.setObjectName("homeButton")
         button4.setFont(QFont("Arial", 14, QFont.Bold))
         button4.clicked.connect(lambda _, button_id=4: self.home_button_clicked(button_id))
@@ -159,6 +159,8 @@ class Dashboard(QWidget):
             subprocess.Popen(["python", "hex_main.py"])
         if(button_id == 3):
             subprocess.Popen(["python", "file_explorer.py"])
+        if(button_id == 4):
+            subprocess.Popen(["python", "magic_cipher.py"])
 
     def download_button_clicked(self, button_id):
         print(f'Download Button {button_id} clicked')
