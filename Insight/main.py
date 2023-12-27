@@ -70,13 +70,13 @@ class Dashboard(QWidget):
 
         home_layout.addLayout(buttons_layout)
 
-        button5 = QPushButton('Button 5')
+        button5 = QPushButton('Disk Analyser')
         button5.setObjectName("homeButton")
         button5.setFont(QFont("Arial", 14, QFont.Bold))
         button5.clicked.connect(lambda _, button_id=5: self.home_button_clicked(button_id))
         home_layout.addWidget(button5)
 
-        button6 = QPushButton('Button 6')
+        button6 = QPushButton('Memory Forensics')
         button6.setObjectName("homeButton")
         button6.setFont(QFont("Arial", 14, QFont.Bold))
         button6.clicked.connect(lambda _, button_id=6: self.home_button_clicked(button_id))
@@ -129,7 +129,7 @@ class Dashboard(QWidget):
 
         self.setLayout(main_layout)
 
-        self.setWindowTitle('Scrollable Dashboard')
+        self.setWindowTitle('Insight')
         self.setGeometry(100, 100, 800, 500)
 
         self.setStyleSheet("""
