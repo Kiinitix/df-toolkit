@@ -25,7 +25,7 @@ class Dashboard(QWidget):
 
         left_panel = QVBoxLayout()
         left_panel.setAlignment(Qt.AlignTop)
-        tabs = ["Home", "Download", "Info"]
+        tabs = ["Home", "Download", "Info", "Exit"]
         self.tab_buttons = []
 
         for tab in tabs:
@@ -54,7 +54,7 @@ class Dashboard(QWidget):
         button2.clicked.connect(lambda _, button_id=2: self.home_button_clicked(button_id))
         buttons_layout.addWidget(button2)
 
-        home_layout.addLayout(buttons_layout)
+        #home_layout.addLayout(buttons_layout)
 
         button3 = QPushButton('File Explorer')
         button3.setObjectName("homeButton")
@@ -68,7 +68,7 @@ class Dashboard(QWidget):
         button4.clicked.connect(lambda _, button_id=4: self.home_button_clicked(button_id))
         home_layout.addWidget(button4)
 
-        home_layout.addLayout(buttons_layout)
+        #home_layout.addLayout(buttons_layout)
 
         button5 = QPushButton('Disk Analyser')
         button5.setObjectName("homeButton")
@@ -81,6 +81,24 @@ class Dashboard(QWidget):
         button6.setFont(QFont("Arial", 14, QFont.Bold))
         button6.clicked.connect(lambda _, button_id=6: self.home_button_clicked(button_id))
         home_layout.addWidget(button6)
+
+        button7 = QPushButton('Timeline Analysis')
+        button7.setObjectName("homeButton")
+        button7.setFont(QFont("Arial", 14, QFont.Bold))
+        button7.clicked.connect(lambda _, button_id=7: self.home_button_clicked(button_id))
+        home_layout.addWidget(button7)
+
+        button8 = QPushButton('Malicious URL Detector')
+        button8.setObjectName("homeButton")
+        button8.setFont(QFont("Arial", 14, QFont.Bold))
+        button8.clicked.connect(lambda _, button_id=8: self.home_button_clicked(button_id))
+        home_layout.addWidget(button8)
+
+        button9 = QPushButton('Malicious PE Header File Detector')
+        button9.setObjectName("homeButton")
+        button9.setFont(QFont("Arial", 14, QFont.Bold))
+        button9.clicked.connect(lambda _, button_id=9: self.home_button_clicked(button_id))
+        home_layout.addWidget(button9)
 
         home_layout.addLayout(buttons_layout)
 
@@ -177,8 +195,13 @@ class Dashboard(QWidget):
             subprocess.Popen(["python", "modules/disk_analyzer.py"])
         if(button_id == 6):
             subprocess.Popen(["python", "modules/memory_forensics.py"])
-        if(button_id == 4):
+        if(button_id == 7):
             subprocess.Popen(["python", "modules/timeline_analysis.py"])
+        if(button_id == 8):
+            subprocess.Popen(["python", "modules/malicious_url.py"])
+        if(button_id == 9):
+            subprocess.Popen(["python", "modules/malicious_pe.py"])
+
 
     def download_button_clicked(self, button_id):
         if(button_id == 11):
