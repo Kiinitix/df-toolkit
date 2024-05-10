@@ -1,9 +1,8 @@
 import sys
-import os
 import magic
 import hashlib
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QTextBrowser, QPushButton, QFileDialog, QLabel, \
-    QTextEdit, QAction, QWidget, QStatusBar, QToolBar, QLineEdit, QInputDialog, QDialog
+    QAction, QWidget, QStatusBar, QToolBar, QLineEdit, QInputDialog, QDialog
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QTextCursor
 

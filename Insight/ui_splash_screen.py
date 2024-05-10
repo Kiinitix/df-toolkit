@@ -89,6 +89,6 @@ class Ui_SplashScreen(object):
         self.label_title.setText(QCoreApplication.translate("SplashScreen", u"<strong>INSIGHT</strong>", None))
         self.label_description.setText(QCoreApplication.translate("SplashScreen", u"<strong>APP</strong> DESCRIPTION", None))
         self.label_loading.setText(QCoreApplication.translate("SplashScreen", u"loading...", None))
-        self.label_credits.setText(QCoreApplication.translate("SplashScreen", u"<strong>Created</strong>: Group 6 (20BCY - VIT Bhopal", None))
+        self.label_credits.setText(QCoreApplication.translate("SplashScreen", u"<strong>Created</strong>: Group 6 (20BCY - VIT Bhopal)", None))
 
 
