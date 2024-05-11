@@ -1,8 +1,8 @@
 import subprocess
 import pkg_resources
-import pkgutil
+import importlib
 
-modules_to_check = ['os', 'sys', 'math', 'random']
+modules_to_check = ['carving', 'disk_analyzer', ' file_explorer', 'hex_reader', 'magic_cipher', 'timeline_analysis']
 
 def list_installed_packages():
     """
@@ -18,7 +18,7 @@ def list_available_modules(modules_to_check):
 
     # Check availability of modules
     for module_name in modules_to_check:
-        if pkgutil.find_loader(module_name) is not None:
+        if importlib.util.find_spec(module_name) is not None:
             available_modules.append(module_name)
 
     return available_modules
@@ -38,7 +38,7 @@ def install_modules(modules):
     Install selected modules using pip.
     """
     for module in modules:
-        subprocess.call(['pip', 'install', module])
+        subprocess.call(['pip3', 'install', module])
 
 def print_menu():
     print("\nMenu:")

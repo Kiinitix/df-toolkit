@@ -40,25 +40,83 @@ class Dashboard(QWidget):
             self.tab_buttons.append(button)
 
         dashboard_content = QStackedWidget()
-        #home_tab = QWidget()
+        home_tab = QWidget()
         
         home_layout = QVBoxLayout()
 
-        #buttons_layout = QHBoxLayout()
+        buttons_layout = QHBoxLayout()
 
-        button1 = QPushButton('Manage Modules')
+        button0 = QPushButton('Manage Modules')
+        button0.setObjectName("homeButton")
+        button0.setFont(QFont("Arial", 14, QFont.Bold))
+        button0.clicked.connect(lambda _, button_id=0: self.home_button_clicked(button_id))
+        home_layout.addWidget(button0)
+        
+        button1 = QPushButton('Carving')
         button1.setObjectName("homeButton")
         button1.setFont(QFont("Arial", 14, QFont.Bold))
         button1.clicked.connect(lambda _, button_id=1: self.home_button_clicked(button_id))
-        home_layout.addWidget(button1)
+        buttons_layout.addWidget(button1)
 
+        button2 = QPushButton('Hex Reader')
+        button2.setObjectName("homeButton")
+        button2.clicked.connect(lambda _, button_id=2: self.home_button_clicked(button_id))
+        buttons_layout.addWidget(button2)
+
+        #home_layout.addLayout(buttons_layout)
+
+        button3 = QPushButton('File Explorer')
+        button3.setObjectName("homeButton")
+        button3.setFont(QFont("Arial", 14, QFont.Bold))
+        button3.clicked.connect(lambda _, button_id=3: self.home_button_clicked(button_id))
+        home_layout.addWidget(button3)
+
+        button4 = QPushButton('Magic Cipher')
+        button4.setObjectName("homeButton")
+        button4.setFont(QFont("Arial", 14, QFont.Bold))
+        button4.clicked.connect(lambda _, button_id=4: self.home_button_clicked(button_id))
+        home_layout.addWidget(button4)
+
+        #home_layout.addLayout(buttons_layout)
+
+        button5 = QPushButton('Disk Analyser')
+        button5.setObjectName("homeButton")
+        button5.setFont(QFont("Arial", 14, QFont.Bold))
+        button5.clicked.connect(lambda _, button_id=5: self.home_button_clicked(button_id))
+        home_layout.addWidget(button5)
+
+        button6 = QPushButton('Memory Forensics')
+        button6.setObjectName("homeButton")
+        button6.setFont(QFont("Arial", 14, QFont.Bold))
+        button6.clicked.connect(lambda _, button_id=6: self.home_button_clicked(button_id))
+        home_layout.addWidget(button6)
+
+        button7 = QPushButton('Timeline Analysis')
+        button7.setObjectName("homeButton")
+        button7.setFont(QFont("Arial", 14, QFont.Bold))
+        button7.clicked.connect(lambda _, button_id=7: self.home_button_clicked(button_id))
+        home_layout.addWidget(button7)
+
+        button8 = QPushButton('Malicious URL Detector')
+        button8.setObjectName("homeButton")
+        button8.setFont(QFont("Arial", 14, QFont.Bold))
+        button8.clicked.connect(lambda _, button_id=8: self.home_button_clicked(button_id))
+        home_layout.addWidget(button8)
+
+        button9 = QPushButton('Malicious PE Header File Detector')
+        button9.setObjectName("homeButton")
+        button9.setFont(QFont("Arial", 14, QFont.Bold))
+        button9.clicked.connect(lambda _, button_id=9: self.home_button_clicked(button_id))
+        home_layout.addWidget(button9)
+
+        '''
         for module in self.modules:
             button = QPushButton(module)
             button.setFont(QFont("Arial", 14, QFont.Bold))
             func = self.createFunction(module)
             button.clicked.connect(func)
             home_layout.addWidget(button)
-
+        '''
         home_scroll_area = QScrollArea()
         home_scroll_area.setWidgetResizable(True)
         home_scroll_area.setWidget(QWidget())
@@ -140,8 +198,10 @@ class Dashboard(QWidget):
         self.findChild(QStackedWidget).setCurrentIndex(index)
 
     def home_button_clicked(self, button_id):
-        if(button_id == 1):
+        if(button_id == 0):
             subprocess.Popen(["python3", "cli_menu.py"])
+        if(button_id == 1):
+            subprocess.Popen(["python3", "modules/carving.py"])
         if(button_id == 2):
             subprocess.Popen(["python", "modules/hex_main.py"])
         if(button_id == 3):

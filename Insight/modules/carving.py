@@ -1,4 +1,4 @@
-import sys
+import sys, math
 import magic
 import hashlib
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QTextBrowser, QPushButton, QFileDialog, QLabel, \
